@@ -10,3 +10,18 @@ def keyboard(request) :
 		'buttons' : ['button1', 'button2', 'button3']
 		}
 	)
+
+def message(request) :
+	return JsonResponse (
+		{
+			'message' :
+			{
+				'text' : 'Input the sentence that you want.'
+			},
+			'keyboard' :
+			{
+				'type' : 'button',
+				'buttons' : ['button1', 'button2', 'button3', 'button4', 'button5']
+			}
+		}
+	)
