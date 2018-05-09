@@ -1,1 +1,1 @@
-web python app/views.py' 
+web python manage.py' 
