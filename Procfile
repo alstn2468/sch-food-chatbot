@@ -1,1 +1,1 @@
-web python my_chatbot/urls.py' 
+web: gunicorn schfoodchatbot.wsgi --log-file -
