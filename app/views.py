@@ -1,11 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.http import HttpResponse
 
 # Create your views here.
-
-def index(request) :
-	return HttpResponse("Hello, My Name is SCH Food ChatBot!")
 
 def keyboard(request) :
 	return JsonResponse (
