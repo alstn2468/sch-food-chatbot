@@ -2,10 +2,15 @@ beautifulsoup4==4.6.0
 bs4==0.0.1
 certifi==2018.1.18
 chardet==3.0.4
+dj-database-url==0.5.0
+dj-static==0.0.6
 Django==2.0.5
+gunicorn==19.8.1
 html-sanitizer==1.4.0
 idna==2.6
 lxml==4.2.1
 pytz==2018.4
 requests==2.18.4
+static3==0.7.0
 urllib3==1.22
+whitenoise==3.3.1
