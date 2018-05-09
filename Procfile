@@ -1,1 +1,1 @@
-web: gunicorn schfoodchatbot.wsgi --log-file -
+web: gunicorn SCH_Food_ChatBot.wsgi --log-file -
