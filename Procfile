@@ -1,1 +1,1 @@
-web python manage.py' 
+web python my_chatbot/urls.py' 
