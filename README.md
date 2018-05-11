@@ -1,7 +1,6 @@
 SCH Food Chatbot
 ========================
 순천향대학교 학식알리미<br/>
-![sch](images/sch.jpg)
 ----------------------
 ### 제작자 : [김민수](https://github.com/alstn2468)<br/>
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
