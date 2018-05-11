@@ -10,12 +10,13 @@ SCH Food Chatbot
 ### 제작자 : [김민수](https://github.com/alstn2468)
 ### - Soonchunhyang University
 ### - Department of Computer Software Engineering
-### - 20174444
+
 
 │ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) │
 [Github](https://github.com/alstn2468) │
 [LinkedIn](https://www.linkedin.com/in/minsu-kim-336289160/) │
 [Webpage](https://kimminsu.ml) │<br/>
+
 
 카카오톡 플러스친구[(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
