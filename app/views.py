@@ -10,7 +10,7 @@ def keyboard(request) :
 	return JsonResponse (
 		{
 		'type' : 'buttons',
-		'buttons' : ['학색', '내일의 학식', '시간별 학식']
+		'buttons' : ['학식', '내일의 학식', '시간별 학식']
 		}
 	)
 
