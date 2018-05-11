@@ -19,8 +19,8 @@ SCH Food Chatbot
 
 
 ### 개요
-Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 카카오톡 챗봇이다.<br/>
-[(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)에서 친구 추가가 가능하다.<br/>
+Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 카카오톡 챗봇입니다.<br/>
+[(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)에서 친구 추가가 가능합니다.<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
 - - -
 
