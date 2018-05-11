@@ -28,10 +28,8 @@ SCH Food Chatbot
 - Python(3.6.5)
 
 
-
 ### 프레임워크
 - Django(2.0.5)
-
 
 
 ### 모듈
@@ -52,9 +50,9 @@ SCH Food Chatbot
 - whitenoise(3.3.1)<br/>
 
 
-
 ### 서버
 - heroku
+- - -
 
 ### 기능
 개발 진행 중
