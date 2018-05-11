@@ -4,7 +4,7 @@ SCH Food Chatbot
 ----------------------
 ### 제작자 : [김민수](https://github.com/alstn2468)<br/>
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Generic badge](https://img.shields.io/badge/Developing-Progressing-green.svg)](https://shields.io/)
 
 카카오톡 플러스친구[(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)<br/>
@@ -16,8 +16,11 @@ SCH Food Chatbot
 - Python(3.6.5)
 
 
+
 ### 프레임워크
 - Django(2.0.5)
+
+
 
 ### 모듈
 - certifi(2018.1.18)<br/>
@@ -37,7 +40,6 @@ SCH Food Chatbot
 - whitenoise(3.3.1)<br/>
 
 
+
 ### 서버
 - heroku
-
--개발 진행 중-
