@@ -13,10 +13,10 @@ SCH Food Chatbot
 ### - 20174444
 
 ┌───────────────────────────┐<br/>
-│ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) │
+  [Facebook](https://www.facebook.com/profile.php?id=100003769223078) │
 [Github](https://github.com/alstn2468) │
 [LinkedIn](https://www.linkedin.com/in/minsu-kim-336289160/) │
-[Webpage](https://kimminsu.ml) │<br/>
+[Webpage](https://kimminsu.ml) <br/>
 └───────────────────────────┘<br/>
 
 카카오톡 플러스친구[(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)<br/>
