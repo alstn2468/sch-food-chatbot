@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from pytz import timezone
+import datetime
 import json
 
 # Create your views here.
@@ -23,12 +25,24 @@ def message(request) :
 	type_name = received_json['type']
 	user_name = received_json['user_key']
 
+	# 오늘
+	today = datetime.datetime.today()
+
+	local_date1 = today.strftime('%Y년 %m월 %d일')
+	local_weekday1 = today.weekday()
+
+	# 내일
+	tomorrow = datetime.datetime.today() + datetime.timedelta(days = 1)
+
+	local_date2 = tomorrow.strftime('%Y년 %m월 %d일')
+	local_weekday2 = tomorrow.weekday()
+
 	if content_name == '학식' :
 		return JsonResponse (
 			{
 				'message' :
 				{
-					'text' : '선택한 버튼 : ' + content_name
+					'text' : '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today + '입니다.'
 				},
 				'keyboard' :
 				{
@@ -43,7 +57,7 @@ def message(request) :
 			{
 				'message' :
 				{
-					'text' : '선택한 버튼 : ' + content_name
+					'text' : '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today + '입니다.'
 				},
 				'keyboard' :
 				{
@@ -58,7 +72,7 @@ def message(request) :
 			{
 				'message' :
 				{
-					'text' : '선택한 버튼 : ' + content_name
+					'text' : '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today + '입니다.'
 				},
 				'keyboard' :
 				{
