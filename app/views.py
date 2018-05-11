@@ -5,8 +5,8 @@ from pytz import timezone
 import datetime
 import json
 
-Dev_Info = '순천향대학교 컴퓨터소프트웨어공학과 김민수'
-Stop_Message = '[*]연속 동일 요청입니다. 나중에 다시 시도해주세요.'
+dev_info = '순천향대학교 컴퓨터소프트웨어공학과 김민수'
+stop_message = '[*]연속 동일 요청입니다. 나중에 다시 시도해주세요.'
 
 class user_chk() :
 
@@ -32,7 +32,7 @@ user2 = user_chk()
 user3 = user_chk()
 user4 = user_chk()
 
-def Re_Process(output) :
+def re_process(output) :
 
     return JsonResponse (
 			{
@@ -68,51 +68,49 @@ def message(request) :
 
 	# 오늘
 	today = datetime.datetime.today()
-	local_date1 = today.strftime('%Y년 %m월 %d일')
-	local_weekday1 = today.weekday()
+	today_info = today.strftime('%Y년 %m월 %d일')
 
 	# 내일
 	tomorrow = datetime.datetime.today() + datetime.timedelta(days = 1)
-	local_date2 = tomorrow.strftime('%Y년 %m월 %d일')
-	local_weekday2 = tomorrow.weekday()
+	tomorrow_info = tomorrow.strftime('%Y년 %m월 %d일')
 
 	if content_name == '학식' :
 		if user0.check(user_key) :
-			return Re_Process(Stop_Message)
+			return re_process(stop_message)
 
-		message = '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today + '입니다.'
+		message = '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today_info + '입니다.'
 
-		return Re_Process(message)
+		return re_process(message)
 
 	elif content_name == '내일의 학식' :
 		if user1.check(user_key) :
-			return Re_Process(Stop_Message)
+			return re_process(stop_message)
 
-		message = '선택한 버튼 : ' + content_name + '\n' + '내일은 ' + tomorrow + '입니다.'
+		message = '선택한 버튼 : ' + content_name + '\n' + '내일은 ' + tomorrow_info + '입니다.'
 
-		return Re_Process(message)
+		return re_process(message)
 
 	elif content_name == '개발자 정보' :
 		if user2.check(user_key) :
-			return Re_Process(Stop_Message)
+			return re_process(stop_message)
 
-		message = '선택한 버튼 : ' + content_name + '\n' + '개발자는 ' + Dev_Info + '입니다.'
+		message = '선택한 버튼 : ' + content_name + '\n' + '개발자는 ' + dev_info + '입니다.'
 
-		return Re_Process(message)
+		return re_process(message)
 
 	else :
 		if user3.check(user_key) :
-			return Re_Process(Stop_Message)
+			return re_process(stop_message)
 
-		Error_Message = '심각한 오류입니다. 개발자에게 알려주세요'
+		error_message = '심각한 오류입니다. 개발자에게 알려주세요'
 
 		if type_name == 'photo' :
-			Error_Message = '사진 보내도 기능이 없네요. 버튼을 눌러주세요!'
+			error_message = '사진 보내도 기능이 없네요. 버튼을 눌러주세요!'
 
 		elif type_name == 'video' :
-			Error_Message = '영상을 보내도 기능이 없네요. 버튼을 눌러주세요!'
+			error_message = '영상을 보내도 기능이 없네요. 버튼을 눌러주세요!'
 
 		elif type_name == 'audio' :
-			Error_Message = '녹음 파일을 보내도 기능이 없네요. 버튼을 눌러주세요!'
+			error_message = '녹음 파일을 보내도 기능이 없네요. 버튼을 눌러주세요!'
 
-		return Re_Process(Error_Message)
+		return re_process(error_message)
