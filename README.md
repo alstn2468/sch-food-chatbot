@@ -21,6 +21,7 @@ SCH Food Chatbot
 
 카카오톡 플러스친구[(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
+- - -
 
 
 ### 언어
