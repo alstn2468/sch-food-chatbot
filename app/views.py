@@ -60,11 +60,11 @@ def keyboard(request) :
 @csrf_exempt
 def message(request) :
 
-	json_str = (request.body).decode('utf-8')
+	json_str = ((request.body).decode('utf-8'))
 	received_json = json.loads(json_str)
 	content_name = received_json['content']
 	type_name = received_json['type']
-	user_name = received_json['user_key']
+	user_key = received_json_data['user_key']
 
 	# 오늘
 	today = datetime.datetime.today()
