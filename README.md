@@ -15,6 +15,7 @@ SCH Food Chatbot
 [ [Github](https://github.com/alstn2468) ]
 [ [LinkedIn](https://www.linkedin.com/in/minsu-kim-336289160/) ]
 [[Webpage](https://kimminsu.ml) ]<br/>
+- - -
 
 <br/>
 
