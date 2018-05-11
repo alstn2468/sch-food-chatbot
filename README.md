@@ -11,7 +11,7 @@ SCH Food Chatbot
 ### - Soonchunhyang University
 ### - Department of Computer Software Engineering
 
-┌─────────┬───────┬─────┬───┐<br/>
+┌──────────────────────────┐<br/>
 ├ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) │
 [Github](https://github.com/alstn2468) │
 [LinkedIn](https://www.linkedin.com/in/minsu-kim-336289160/) │
