@@ -246,9 +246,9 @@ def answer(request) :
 		#
 		# else :
 
-		send_message = select_button.format(content_name, today_info) + meal
+		#send_message = select_button.format(content_name, today_info) + meal
 
-		return re_process(send_message)
+		return re_process(meal)
 
 	elif content_name == '종강' :
 		# if user5.check(user_key) :
