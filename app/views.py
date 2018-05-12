@@ -158,7 +158,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '일요일에는' + content_name + ' 식당은\n운영하지 않습니다.'
+				meal = '일요일에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -180,7 +180,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '주말에는' + content_name + ' 식당은\n운영하지 않습니다.'
+				meal = '주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -257,7 +257,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '주말에는' + content_name + ' 식당은\n운영하지 않습니다.'
+				meal = '주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -295,7 +295,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '주말에는 '+ content_name + '은\n운영하지 않습니다.'
+				meal = '주말에 '+ content_name + '은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -305,8 +305,8 @@ def answer(request) :
 		return re_process(send_message)
 
 	elif content_name == '종강' :
-		# if user5.check(user_key) :
-		# 	return re_process(stop_message)
+		if user5.check(user_key) :
+			return re_process(stop_message)
 
 		# 종강 일
 		finish = datetime.datetime(2018, 6, 22)
@@ -318,16 +318,16 @@ def answer(request) :
 		return re_process(send_message)
 
 	elif content_name == '개발자 정보' :
-		# if user6.check(user_key) :
-		# 	return re_process(stop_message)
+		if user6.check(user_key) :
+			return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n' + dev_info
 
 		return re_process(send_message)
 
 	else :
-		# if user7.check(user_key) :
-		# 	return re_process(stop_message)
+		if user7.check(user_key) :
+			return re_process(stop_message)
 
 		error_message = '[*] 심각한 오류입니다.\n[*] 개발자에게 알려주세요'
 
