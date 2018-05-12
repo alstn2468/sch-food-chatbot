@@ -56,7 +56,6 @@ def char_replace(meal) :
 
 	return meal
 
-
 # 사용자의 과도한 접근을 차단하기 위한 클래스
 class user_chk() :
 
