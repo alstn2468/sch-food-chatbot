@@ -58,7 +58,7 @@ def answer(request) :
 	received_json = json.loads(json_str)
 	content_name = received_json['content']
 	type_name = received_json['type']
-	user_key = received_json_data['user_key']
+	user_key = received_json['user_key']
 
 	# 오늘
 	today = datetime.datetime.today()
