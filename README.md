@@ -3,13 +3,16 @@ SCH Food Chatbot
 순천향대학교 학식알리미<br/>
 ----------------------
 
+
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Generic badge](https://img.shields.io/badge/Developing-Progressing-green.svg)](https://shields.io/)
 
+
 ### 제작자 : [김민수](https://github.com/alstn2468)
 ### Soonchunhyang University
 ### Department of Computer Software Engineering
+
 
 [ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) ]
 [ [Github](https://github.com/alstn2468) ]
@@ -22,6 +25,9 @@ SCH Food Chatbot
 Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 카카오톡 챗봇입니다.<br/>
 [(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)에서 친구 추가가 가능합니다.<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
+
+
+### 기술
 - - -
 
 
@@ -53,7 +59,40 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 
 ### 서버
 - heroku
-- - -
+
 
 ### 기능
-개발 진행 중
+- - -
+개발 진행 중<br/>
+
+
+### 향설1 생활관
+- 월 ~ 토 요일별 `당일` 학식 메뉴 확인 가능<br/>
+- 조식, 중식, 석식 학번에 확인 가능<br/>
+- 학식이 없는 경우도 표시<br/>
+
+
+### 향설2 생활관
+- 향설2 생활관 학식 `메뉴` 확인 가능<br/>
+- 일주일 동안 같은 메뉴
+
+
+### 향설3 생활관
+- 요일별 `당일` 학식 메뉴 확인 가능<br/>
+- 컵밥, 도시락, 덮밥, 스페셜메뉴, 돈까스, 라면, 부대라면 세부 메뉴 한번에 확인 가능<br/>
+- 학식이 없는 경우도 표시<br/>
+
+
+### 학생 회관
+- 월 ~ 금 요일별 `당일` 학식 메뉴 확인 가능<br/>
+- 조식 메뉴 확인 가능<br/>
+- 중식/석식 메뉴는 동일<br/>
+- 중식/석식 세부 메뉴 확인 가능<br/>
+- 샐러드바 메뉴 확인 가능<br/>
+- 학식이 없는 경우도 표시<br/>
+
+
+### 교직원 식당
+- 월 ~ 금 요일별 `당일` 학식 메뉴 확인 가능<br/>
+- 중식 메뉴 확인 가능<br/>
+- 한정 메뉴 확인 가능<br/>
