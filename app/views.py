@@ -5,8 +5,7 @@ from pytz import timezone
 import datetime
 import json
 
-dev_info = '''[*]
-[*] 컴퓨터소프트웨어공학과
+dev_info = '''[*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
 [*] KakaoTalk : alstn2468
