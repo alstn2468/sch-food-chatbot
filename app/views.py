@@ -54,7 +54,7 @@ def re_process(output) :
             },
             'keyboard': {
                 'type': 'buttons',
-                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강' '개발자 정보']
+                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '개발자 정보']
             }
         })
 
@@ -62,7 +62,7 @@ def keyboard(request) :
 
 	return JsonResponse ({
 		'type' : 'buttons',
-		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강' '개발자 정보']
+		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '개발자 정보']
 		})
 
 @csrf_exempt
@@ -84,7 +84,7 @@ def answer(request) :
 		if user0.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의 ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -92,7 +92,7 @@ def answer(request) :
 		if user1.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의 ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -100,7 +100,7 @@ def answer(request) :
 		if user2.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의 ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -108,7 +108,7 @@ def answer(request) :
 		if user3.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의 ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -116,7 +116,7 @@ def answer(request) :
 		if user4.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의 ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
