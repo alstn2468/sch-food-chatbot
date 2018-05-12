@@ -9,9 +9,7 @@ SCH Food Chatbot
 [![Generic badge](https://img.shields.io/badge/Developing-Progressing-green.svg)](https://shields.io/)
 
 
-## 제작자 : [김민수](https://github.com/alstn2468)
-## Soonchunhyang University
-## Department of Computer Software Engineering
+## 제작자 : [김민수](https://github.com/alstn2468)<br/>Soonchunhyang University<br/>Department of Computer Software Engineering
 
 
 [ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) ]
