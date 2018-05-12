@@ -5,15 +5,15 @@ from pytz import timezone
 import datetime
 import json
 
-dev_info = '''[*] 컴퓨터소프트웨어공학과
+dev_info = '''
+[*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
 [*] KakaoTalk : alstn2468
 [*] 새로운 기능 문의 환영
 [*] 에러 발견 문의 환영'''
 
-stop_message = '''
-[*] 연속 동일 요청입니다.
+stop_message = '''[*] 연속 동일 요청입니다.
 [*] 나중에 다시 시도해주세요.'''
 
 class user_chk() :
@@ -87,7 +87,7 @@ def answer(request) :
 		if user0.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 :' + content_name + '\n' + today_info + '의\n' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -95,7 +95,7 @@ def answer(request) :
 		if user1.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 :' + content_name + '\n' + today_info + '의\n' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -103,7 +103,7 @@ def answer(request) :
 		if user2.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 :' + content_name + '\n' + today_info + '의\n' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -111,7 +111,7 @@ def answer(request) :
 		if user3.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 :' + content_name + '\n' + today_info + '의\n' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -119,7 +119,7 @@ def answer(request) :
 		if user4.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 :' + content_name + '\n' + today_info + '의\n' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -132,7 +132,7 @@ def answer(request) :
 		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
 
-		send_message = '[*] 선택한 버튼 :' + content_name + '\n' + '종강 일 : ' + finish_info + '\n' + '종강까지 남은 일 수 : ' + date_dif + '일 남았습니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + '종강 일 : ' + finish_info + '\n[*] ' + '종강까지 남은 일 수 : ' + date_dif + '일 남았습니다.'
 
 		return re_process(send_message)
 
