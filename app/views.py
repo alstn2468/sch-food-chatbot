@@ -134,7 +134,7 @@ def answer(request) :
 		# if user4.check(user_key) :
 		# 	return re_process(stop_message)
 
-		with open('FacultyRestaurant.json', 'rb') as f :
+		with open('FacultyRestaurant.json', 'r') as f :
 			datas = json.load(f)
 
 		meal = str(datas.get('월'))
