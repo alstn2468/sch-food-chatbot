@@ -137,13 +137,13 @@ def answer(request) :
 		# if user4.check(user_key) :
 		# 	return re_process(stop_message)
 
-		with open('menu\FacultyRestaurant.json', 'r') as f :
-			datas = json.load(f)
+		# with open('menu\FacultyRestaurant.json', 'r') as f :
+		# 	datas = json.load(f)
+		#
+		# meal = str(datas.get('월'))
+		# meal = char_replace(meal)
 
-		meal = str(datas.get('월'))
-		meal = char_replace(meal)
-
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' #+ meal
 
 		return re_process(send_message)
 
