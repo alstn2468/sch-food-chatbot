@@ -6,7 +6,7 @@ SCH Food Chatbot
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Generic badge](https://img.shields.io/badge/Developing-Progressing-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://shields.io/)
 
 
 ## 제작자 : [김민수](https://github.com/alstn2468)<br/>Soonchunhyang University<br/>Department of Computer Software Engineering
@@ -111,5 +111,5 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - - -
 
 ## 버전
-[1.0.0](https://github.com/alstn2468/SCH_Food_ChatBot) 날짜, 그 당시 commit 로그 링크
+[1.0.0](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) 2018년 5월 12일<br/>
 - - -
