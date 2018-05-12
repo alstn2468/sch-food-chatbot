@@ -328,7 +328,7 @@ def answer(request) :
 		error_message = '[*] 심각한 오류입니다.\n[*] 개발자에게 알려주세요'
 
 		if type_name == 'photo' :
-			error_message = '[*] 사진 보내도 기능이 없네요.\n[*] 버튼을 눌러주세요!'
+			error_message = '[*] 사진을 보내도 기능이 없네요.\n[*] 버튼을 눌러주세요!'
 
 		elif type_name == 'video' :
 			error_message = '[*] 영상을 보내도 기능이 없네요.\n[*] 버튼을 눌러주세요!'
