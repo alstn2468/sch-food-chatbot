@@ -26,7 +26,10 @@ stop_message = '''[*] 연속 동일 요청입니다.
 
 # 문자열에 문자를 바꾸는 함수
 def char_replace(meal) :
-	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(' '): '', ord(':'): ' : '})
+	oldChars = "[]{}',:"
+	newChars = '     \n\n'
+
+	meal = meal.translate({ ord(x): y for (x, y) in zip(oldChars, newChars) })
 	return meal
 
 # 사용자의 과도한 접근을 차단하기 위한 클래스
