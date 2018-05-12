@@ -5,8 +5,20 @@ from pytz import timezone
 import datetime
 import json
 
-dev_info = '순천향대학교 컴퓨터소프트웨어공학과\n 17학번 김민수'
-stop_message = '[*]연속 동일 요청입니다. 나중에 다시 시도해주세요.'
+dev_info =
+'''
+[*] 컴퓨터소프트웨어공학과
+[*] 17학번 김민수
+[*] Github : alstn2468
+[*] KakaoTalk : alstn2468
+[*] 새로운 기능 문의 환영
+[*] 에러 발견 문의 환영
+''''
+stop_message =
+'''
+[*] 연속 동일 요청입니다.
+[*] 나중에 다시 시도해주세요.
+'''
 
 class user_chk() :
 
@@ -90,7 +102,7 @@ def answer(request) :
 		if user2.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 : ' + content_name + '\n' + dev_info + '입니다.'
+		send_message = '선택한 버튼 : ' + content_name + '\n' + dev_info
 
 		return re_process(send_message)
 
