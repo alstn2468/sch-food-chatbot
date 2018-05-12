@@ -228,7 +228,7 @@ def answer(request) :
 			meal = char_replace(meal)
 
 		except Exception as e:
-			meal = str(e)
+			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
 		# if today_weekday == 0 :
 		#
