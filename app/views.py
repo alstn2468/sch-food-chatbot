@@ -221,7 +221,7 @@ def answer(request) :
 		# 	return re_process(stop_message)
 
 		try :
-			with open('FacultyRestaurant.json', 'rb') as f :
+			with open('app/menu/FacultyRestaurant.json', 'rb') as f :
 				datas = json.load(f)
 
 			meal = str(datas.get('월'))
@@ -241,8 +241,6 @@ def answer(request) :
 		# elif today_weekday == 4 :
 		#
 		# elif today_weekday == 5 :
-		#
-		# elif today_weekday == 6 :
 		#
 		# else :
 
