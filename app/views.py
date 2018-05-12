@@ -79,8 +79,6 @@ def answer(request) :
 	# 오늘
 	today = datetime.datetime.today()
 	today_info = today.strftime('%Y년 %m월 %d일')
-	today_weekday = today.weekday()
-
 
 	if content_name == '향설1 생활관' :
 		# if user0.check(user_key) :
@@ -127,7 +125,7 @@ def answer(request) :
 		# 	return re_process(stop_message)
 
 		# 종강 일
-		finish = datetime.datetime(2018, 6, 22)
+		finish = datetime.date(2018, 6, 22)
 		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
 
