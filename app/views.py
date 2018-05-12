@@ -127,8 +127,7 @@ def answer(request) :
 		with open('menu/FacultyRestaurant.json', 'rb') as f :
 			datas = json.load(f)
 
-		if today_weekday == 0 :
-			meal = str(datas.get('월'))
+		meal = str(datas.get('월'))
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
 
