@@ -4,7 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 from pytz import timezone
 import datetime
 import json
-from formatting import char_replace
 
 # 데이터 목록
 # menu/SnowFlowerOne.json     향설1 생활관
@@ -31,6 +30,30 @@ no_meal_message = '''[*] 학식이 없는 날 입니다.
 
 # 선택한 버튼이 학식 메뉴일 경우 메세지 포매팅
 select_button = '[*] 선택한 버튼 : {0}\n[*] {1}의\n[*] {0} 메뉴입니다.\n'
+
+# 데이터를 보기 좋게 출력하기 위한 문자열 처리 함수
+def char_replace(meal) :
+	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(':'): '\n',ord(' '): ''})
+	meal = meal.replace('\n', '\n·')
+	meal = meal.replace('-중식/석식-', '\n[중식/석식]')
+	meal = meal.replace('-조식-', '[조식]')
+	meal = meal.replace('-컵밥-', '[컵밥]')
+	meal = meal.replace('-중식-', '\n[중식]')
+	meal = meal.replace('-석식-', '\n[석식]')
+	meal = meal.replace('-한식-', '\n[한식]')
+	meal = meal.replace('-덮밥-', '\n[덮밥]')
+	meal = meal.replace('-양식-', '\n[양식]')
+	meal = meal.replace('-도시락-', '\n[도시락]')
+	meal = meal.replace('-스페셜메뉴-', '\n[스페셜메뉴]')
+	meal = meal.replace('-돈까스-', '\n[돈까스]')
+	meal = meal.replace('-라면-', '\n[라면]')
+	meal = meal.replace('-메뉴-', '\n[메뉴]')
+	meal = meal.replace('-부대라면-', '\n[부대라면]')
+	meal = meal.replace('-한정메뉴-', '\n[한정메뉴]')
+	meal = meal.replace('-샐러드바-', '\n[샐러드바]')
+	meal = meal.replace('\n·\n', '\n\n')
+	return meal
+
 
 # 사용자의 과도한 접근을 차단하기 위한 클래스
 class user_chk() :
