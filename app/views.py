@@ -22,6 +22,13 @@ dev_info = '''[*] 컴퓨터소프트웨어공학과
 stop_message = '''[*] 연속 동일 요청입니다.
 [*] 나중에 다시 시도해주세요.'''
 
+def char_replace(meal) :
+	oldChars = "[]{}',"
+	newChars = '     \n'
+
+	meal = meal.translate({ ord(x): y for (x, y) in zip(oldChars, newChars) })
+	return meal
+
 class user_chk() :
 
     def __init__(self) :
@@ -128,11 +135,7 @@ def answer(request) :
 			datas = json.load(f)
 
 		meal = str(datas.get('월'))
-
-		oldChars = "[]{}',"
-		newChars = '     \n'
-
-		meal = meal.translate({ ord(x): y for (x, y) in zip(oldChars, newChars) })
+		meal = char_replace(meal)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
 
