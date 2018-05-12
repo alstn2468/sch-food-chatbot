@@ -5,7 +5,7 @@ from pytz import timezone
 import datetime
 import json
 
-dev_info = '''
+dev_info = '''[*]
 [*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
@@ -84,48 +84,48 @@ def answer(request) :
 
 
 	if content_name == '향설1 생활관' :
-		if user0.check(user_key) :
-			return re_process(stop_message)
+		# if user0.check(user_key) :
+		# 	return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
 	elif content_name == '향설2 생활관' :
-		if user1.check(user_key) :
-			return re_process(stop_message)
+		# if user1.check(user_key) :
+		# 	return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
 	elif content_name == '향설3 생활관' :
-		if user2.check(user_key) :
-			return re_process(stop_message)
+		# if user2.check(user_key) :
+		# 	return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
 	elif content_name == '학생회관' :
-		if user3.check(user_key) :
-			return re_process(stop_message)
+		# if user3.check(user_key) :
+		# 	return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
 	elif content_name == '교직원 식당' :
-		if user4.check(user_key) :
-			return re_process(stop_message)
+		# if user4.check(user_key) :
+		# 	return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
 	elif content_name == '종강' :
-		if user5.check(user_key) :
-			return re_process(stop_message)
+		# if user5.check(user_key) :
+		# 	return re_process(stop_message)
 
 		# 종강 일
 		finish = datetime.datetime(2018, 6, 22)
@@ -137,16 +137,16 @@ def answer(request) :
 		return re_process(send_message)
 
 	elif content_name == '개발자 정보' :
-		if user6.check(user_key) :
-			return re_process(stop_message)
+		# if user6.check(user_key) :
+		# 	return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n' + dev_info
 
 		return re_process(send_message)
 
 	else :
-		if user7.check(user_key) :
-			return re_process(stop_message)
+		# if user7.check(user_key) :
+		# 	return re_process(stop_message)
 
 		error_message = '[*] 심각한 오류입니다.\n[*] 개발자에게 알려주세요'
 
