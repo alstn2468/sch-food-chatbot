@@ -77,7 +77,7 @@ def answer(request) :
 	user_key = received_json['user_key']
 
 	# 오늘
-	today = datetime.datetime.today()
+	today = datetime.datetime.now()
 	today_info = today.strftime('%Y년 %m월 %d일')
 
 	if content_name == '향설1 생활관' :
@@ -125,7 +125,7 @@ def answer(request) :
 		# 	return re_process(stop_message)
 
 		# 종강 일
-		finish = datetime.date(2018, 6, 22)
+		finish = datetime.datetime(2018, 6, 22)
 		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
 
