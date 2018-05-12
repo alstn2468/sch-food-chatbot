@@ -12,7 +12,7 @@ import json
 # menu/StudentUnion.json      학생 회관
 # menu/FacultyRestaurant.json 교직원 식당
 
-# 개발자 정보 문자열
+# 개발자 정보 메세지
 dev_info = '''[*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
@@ -20,8 +20,12 @@ dev_info = '''[*] 컴퓨터소프트웨어공학과
 [*] 새로운 기능 문의 환영
 [*] 에러 발견 문의 환영'''
 
-# 연속 동일 요청 문자열
+# 연속 동일 요청 메세지
 stop_message = '''[*] 연속 동일 요청입니다.
+[*] 나중에 다시 시도해주세요.'''
+
+# 학식이 없는 날일 때 메세지
+no_meal_message = '''[*] 학식이 없는 날 입니다.
 [*] 나중에 다시 시도해주세요.'''
 
 # 문자열에 문자를 바꾸는 함수
@@ -105,7 +109,7 @@ def answer(request) :
 		# if user0.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
 
 		return re_process(send_message)
 
@@ -113,7 +117,7 @@ def answer(request) :
 		# if user1.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
 
 		return re_process(send_message)
 
@@ -121,7 +125,7 @@ def answer(request) :
 		# if user2.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
 
 		return re_process(send_message)
 
@@ -129,7 +133,7 @@ def answer(request) :
 		# if user3.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
 
 		return re_process(send_message)
 
@@ -137,13 +141,13 @@ def answer(request) :
 		# if user4.check(user_key) :
 		# 	return re_process(stop_message)
 
-		# with open('menu\FacultyRestaurant.json', 'r') as f :
-		# 	datas = json.load(f)
-		#
-		# meal = str(datas.get('월'))
-		# meal = char_replace(meal)
+		with open('menu\FacultyRestaurant.json', 'r') as f :
+			datas = json.load(f)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' #+ meal
+		meal = str(datas.get('월'))
+		meal = char_replace(meal)
+
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
 
 		return re_process(send_message)
 
