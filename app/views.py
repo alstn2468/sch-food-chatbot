@@ -228,7 +228,7 @@ def answer(request) :
 			meal = char_replace(meal)
 
 		except Exception as e:
-			mead = str(e)
+			meal = str(e)
 
 		# if today_weekday == 0 :
 		#
