@@ -12,7 +12,7 @@ dev_info = '''
 [*] KakaoTalk : alstn2468
 [*] 새로운 기능 문의 환영
 [*] 에러 발견 문의 환영
-''''
+'''
 
 stop_message = '''
 [*] 연속 동일 요청입니다.
@@ -124,6 +124,7 @@ def answer(request) :
 		if user5.check(user_key) :
 			return re_process(stop_message)
 
+		# 종강 일
 		finish = datetime.datetime(2018, 6, 22)
 		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
