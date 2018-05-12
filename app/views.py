@@ -23,10 +23,7 @@ stop_message = '''[*] 연속 동일 요청입니다.
 [*] 나중에 다시 시도해주세요.'''
 
 def char_replace(meal) :
-	oldChars = "[]{}',"
-	newChars = '     \n'
-
-	meal = meal.translate({ ord(x): y for (x, y) in zip(oldChars, newChars) })
+	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(' '): '', ord(':'): ' : '})
 	return meal
 
 class user_chk() :
@@ -99,7 +96,7 @@ def answer(request) :
 		# if user0.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : {content_name} \n[*] {today_info}의\n[*] {content_name} 메뉴입니다.'.format(content_name, today_info, content_name)
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -107,7 +104,7 @@ def answer(request) :
 		# if user1.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : {content_name} \n[*] {today_info}의\n[*] {content_name} 메뉴입니다.'.format(content_name, today_info, content_name)
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -115,7 +112,7 @@ def answer(request) :
 		# if user2.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message ='[*] 선택한 버튼 : {content_name} \n[*] {today_info}의\n[*] {content_name} 메뉴입니다.'.format(content_name, today_info, content_name)
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -123,7 +120,7 @@ def answer(request) :
 		# if user3.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : {content_name} \n[*] {today_info}의\n[*] {content_name} 메뉴입니다.'.format(content_name, today_info, content_name)
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
 
 		return re_process(send_message)
 
@@ -137,7 +134,7 @@ def answer(request) :
 		meal = str(datas.get('월'))
 		meal = char_replace(meal)
 
-		send_message = '[*] 선택한 버튼 : {content_name} \n[*] {today_info}의\n[*] {content_name} 메뉴입니다.\n {meal}'.format(content_name, today_info, content_name, meal)
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
 
 		return re_process(send_message)
 
@@ -150,7 +147,7 @@ def answer(request) :
 		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
 
-		send_message = '[*] 선택한 버튼 : {content_name}\n[*] 오늘 : {today_info}\n[*] 종강 : {finish_info}\n[*] 종강까지 {date_dif}일 남았습니다.'.format(content_name, today_info, finish_info, date_dif.days)
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] 오늘 : ' + today_info + '\n[*] 종강 : ' + finish_info + '\n[*] 종강까지 %d일 남았습니다.' % date_dif.days
 
 		return re_process(send_message)
 
