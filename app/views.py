@@ -5,8 +5,7 @@ from pytz import timezone
 import datetime
 import json
 
-dev_info =
-'''
+dev_info = '''
 [*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
@@ -14,8 +13,8 @@ dev_info =
 [*] 새로운 기능 문의 환영
 [*] 에러 발견 문의 환영
 ''''
-stop_message =
-'''
+
+stop_message = '''
 [*] 연속 동일 요청입니다.
 [*] 나중에 다시 시도해주세요.
 '''
@@ -43,6 +42,9 @@ user1 = user_chk()
 user2 = user_chk()
 user3 = user_chk()
 user4 = user_chk()
+user5 = user_chk()
+user6 = user_chk()
+user7 = user_chk()
 
 def re_process(output) :
 
@@ -52,7 +54,7 @@ def re_process(output) :
             },
             'keyboard': {
                 'type': 'buttons',
-                'buttons' : ['학식', '내일의 학식', '개발자 정보']
+                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강' '개발자 정보']
             }
         })
 
@@ -60,7 +62,7 @@ def keyboard(request) :
 
 	return JsonResponse ({
 		'type' : 'buttons',
-		'buttons' : ['학식', '내일의 학식', '개발자 정보']
+		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강' '개발자 정보']
 		})
 
 @csrf_exempt
@@ -77,29 +79,60 @@ def answer(request) :
 	today_info = today.strftime('%Y년 %m월 %d일')
 	today_weekday = today.weekday()
 
-	# 내일
-	tomorrow = datetime.datetime.today() + datetime.timedelta(days = 1)
-	tomorrow_info = tomorrow.strftime('%Y년 %m월 %d일')
-	tomorrow_weekday = tomorrow.weekday()
 
-	if content_name == '학식' :
+	if content_name == '향설1 생활관' :
 		if user0.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today_info + '입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
 
 		return re_process(send_message)
 
-	elif content_name == '내일의 학식' :
+	elif content_name == '향설2 생활관' :
 		if user1.check(user_key) :
 			return re_process(stop_message)
 
-		send_message = '선택한 버튼 : ' + content_name + '\n' + '내일은 ' + tomorrow_info + '입니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+
+		return re_process(send_message)
+
+	elif content_name == '향설3 생활관' :
+		if user2.check(user_key) :
+			return re_process(stop_message)
+
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+
+		return re_process(send_message)
+
+	elif content_name == '학생회관' :
+		if user3.check(user_key) :
+			return re_process(stop_message)
+
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+
+		return re_process(send_message)
+
+	elif content_name == '교직원 식당' :
+		if user4.check(user_key) :
+			return re_process(stop_message)
+
+		send_message = '선택한 버튼 :' + content_name + '\n' + today_info + '의' + content_name + '메뉴입니다.'
+
+		return re_process(send_message)
+
+	elif content_name == '종강' :
+		if user5.check(user_key) :
+			return re_process(stop_message)
+
+		finish = datetime.datetime(2018, 6, 22)
+		date_dif = finish - today
+
+		send_message = '선택한 버튼 :' + content_name + '\n' + '종강까지 남은 일 수 : ' + date_dif + '일 남았습니다.'
 
 		return re_process(send_message)
 
 	elif content_name == '개발자 정보' :
-		if user2.check(user_key) :
+		if user6.check(user_key) :
 			return re_process(stop_message)
 
 		send_message = '선택한 버튼 : ' + content_name + '\n' + dev_info
@@ -107,7 +140,7 @@ def answer(request) :
 		return re_process(send_message)
 
 	else :
-		if user3.check(user_key) :
+		if user7.check(user_key) :
 			return re_process(stop_message)
 
 		error_message = '심각한 오류입니다. 개발자에게 알려주세요'
