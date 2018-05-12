@@ -5,6 +5,13 @@ from pytz import timezone
 import datetime
 import json
 
+# 데이터 목록
+# menu/SnowFlowerOne.json     향설1 생활관
+# menu/SnowFlowerTwo.json     향설2 생활관
+# menu/SnowFlowerThree.json   향설3 생활관
+# menu/StudentUnion.json      학생 회관
+# menu/FacultyRestaurant.json 교직원 식당
+
 dev_info = '''[*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
@@ -79,6 +86,7 @@ def answer(request) :
 	# 오늘
 	today = datetime.datetime.now()
 	today_info = today.strftime('%Y년 %m월 %d일')
+	today_weekday = today.weekday()
 
 	if content_name == '향설1 생활관' :
 		# if user0.check(user_key) :
@@ -116,7 +124,10 @@ def answer(request) :
 		# if user4.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.'
+		with open('menu/FacultyRestaurant.json', 'rb') as f :
+			datas = json.load(f)
+
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.' + '%s' % datas
 
 		return re_process(send_message)
 
