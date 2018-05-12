@@ -129,12 +129,10 @@ def answer(request) :
 
 		meal = str(datas.get('월'))
 
-		for i in len(meal) :
-			meal.replace('[', '')
-			meal.replace(']', '')
-			meal.replace('{', '')
-			meal.replace('}', '')
-			meal.replace(',', '\n')
+		oldChars = "[]{}',"
+		newChars = '     \n'
+
+		meal = meal.translate({ ord(x): y for (x, y) in zip(oldChars, newChars) })
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
 
