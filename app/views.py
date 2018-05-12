@@ -221,7 +221,7 @@ def answer(request) :
 		# 	return re_process(stop_message)
 
 		try :
-			with open('menu/FacultyRestaurant.json', 'rb') as f :
+			with open('./menu/FacultyRestaurant.json', 'rb') as f :
 				datas = json.load(f)
 
 			meal = str(datas.get('월'))
