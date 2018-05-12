@@ -28,9 +28,12 @@ stop_message = '''[*] 연속 동일 요청입니다.
 no_meal_message = '''[*] 학식이 없는 날 입니다.
 [*] 나중에 다시 시도해주세요.'''
 
+# 선택한 버튼이 학식 메뉴일 경우 메세지 포매팅
+select_button = '[*] 선택한 버튼 : {0}\n[*] {1}의\n[*] {0}메뉴입니다.\n'
+
 # 데이터를 보기 좋게 출력하기 위한 문자열 처리 함수
 def char_replace(meal) :
-	
+
 	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(':'): '\n',ord(' '): ''})
 	meal = meal.replace('\n', '\n·')
 	meal = meal.replace('한정메뉴', '\n한정메뉴')
@@ -110,7 +113,7 @@ def answer(request) :
 		# if user0.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
+		send_message = select_button.format(content_name, today_info)
 
 		return re_process(send_message)
 
@@ -118,7 +121,7 @@ def answer(request) :
 		# if user1.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
+		send_message = select_button.format(content_name, today_info)
 
 		return re_process(send_message)
 
@@ -126,7 +129,7 @@ def answer(request) :
 		# if user2.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
+		send_message = select_button.format(content_name, today_info)
 
 		return re_process(send_message)
 
@@ -134,7 +137,7 @@ def answer(request) :
 		# if user3.check(user_key) :
 		# 	return re_process(stop_message)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n'
+		send_message = select_button.format(content_name, today_info)
 
 		return re_process(send_message)
 
@@ -148,7 +151,7 @@ def answer(request) :
 		meal = str(datas.get('월'))
 		meal = char_replace(meal)
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '의\n[*] ' + content_name + ' 메뉴입니다.\n' + meal
+		send_message = select_button.format(content_name, today_info) + meal
 
 		return re_process(send_message)
 
