@@ -125,9 +125,10 @@ def answer(request) :
 			return re_process(stop_message)
 
 		finish = datetime.datetime(2018, 6, 22)
+		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
 
-		send_message = '선택한 버튼 :' + content_name + '\n' + '종강까지 남은 일 수 : ' + date_dif + '일 남았습니다.'
+		send_message = '선택한 버튼 :' + content_name + '\n' + '종강 일 : ' + finish_info + '\n' + '종강까지 남은 일 수 : ' + date_dif + '일 남았습니다.'
 
 		return re_process(send_message)
 
