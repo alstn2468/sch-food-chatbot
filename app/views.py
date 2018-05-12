@@ -60,7 +60,7 @@ def keyboard(request) :
 @csrf_exempt
 def message(request) :
 
-	json_str = ((request.body).decode('utf-8'))
+	json_str = (request.body).decode('utf-8')
 	received_json = json.loads(json_str)
 	content_name = received_json['content']
 	type_name = received_json['type']
@@ -69,34 +69,36 @@ def message(request) :
 	# 오늘
 	today = datetime.datetime.today()
 	today_info = today.strftime('%Y년 %m월 %d일')
+	today_weekday = today.weekday()
 
 	# 내일
 	tomorrow = datetime.datetime.today() + datetime.timedelta(days = 1)
 	tomorrow_info = tomorrow.strftime('%Y년 %m월 %d일')
+	tomorrow_weekday = tomorrow.weekday()
 
 	if content_name == '학식' :
 		if user0.check(user_key) :
 			return re_process(stop_message)
 
-		message = '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today_info + '입니다.'
+		send_message = '선택한 버튼 : ' + content_name + '\n' + '오늘은 ' + today_info + '입니다.'
 
-		return re_process(message)
+		return re_process(send_message)
 
 	elif content_name == '내일의 학식' :
 		if user1.check(user_key) :
 			return re_process(stop_message)
 
-		message = '선택한 버튼 : ' + content_name + '\n' + '내일은 ' + tomorrow_info + '입니다.'
+		send_message = '선택한 버튼 : ' + content_name + '\n' + '내일은 ' + tomorrow_info + '입니다.'
 
-		return re_process(message)
+		return re_process(send_message)
 
 	elif content_name == '개발자 정보' :
 		if user2.check(user_key) :
 			return re_process(stop_message)
 
-		message = '선택한 버튼 : ' + content_name + '\n' + '개발자는 ' + dev_info + '입니다.'
+		send_message = '선택한 버튼 : ' + content_name + '\n' + '개발자는 ' + dev_info + '입니다.'
 
-		return re_process(message)
+		return re_process(send_message)
 
 	else :
 		if user3.check(user_key) :
