@@ -158,7 +158,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '일요일에 ' + content_name + ' 식당은\n운영하지 않습니다.'
+				meal = '\n일요일에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -180,7 +180,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
+				meal = '\n주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -257,7 +257,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
+				meal = '\n주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
@@ -295,7 +295,7 @@ def answer(request) :
 				meal = char_replace(meal)
 
 			else :
-				meal = '주말에 '+ content_name + '은\n운영하지 않습니다.'
+				meal = '\n주말에 '+ content_name + '은\n운영하지 않습니다.'
 
 		except Exception as e:
 			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
