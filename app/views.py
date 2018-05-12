@@ -29,6 +29,7 @@ def char_replace(meal) :
 	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(':'): '\n',ord(' '): ''})
 	meal = meal.replace('\n', '\n·')
 	meal = meal.replace('한정메뉴', '\n한정메뉴')
+	meal = meal.replace('\n·\n', '\n\n')
 	return meal
 
 # 사용자의 과도한 접근을 차단하기 위한 클래스
