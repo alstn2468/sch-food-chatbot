@@ -4,7 +4,7 @@ def char_replace(meal) :
 	meal = meal.replace('\n', '\n·')
 	meal = meal.replace('-중식/석식-', '\n[중식/석식]')
 	meal = meal.replace('-조식-', '[조식]')
-	meal = meal.replace('-컵밥-', '컵밥]')
+	meal = meal.replace('-컵밥-', '[컵밥]')
 	meal = meal.replace('-중식-', '\n[중식]')
 	meal = meal.replace('-석식-', '\n[석식]')
 	meal = meal.replace('-한식-', '\n[한식]')

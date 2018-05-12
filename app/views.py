@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from pytz import timezone
 import datetime
 import json
-from format import char_replace
+from formatting import char_replace
 
 # 데이터 목록
 # menu/SnowFlowerOne.json     향설1 생활관
