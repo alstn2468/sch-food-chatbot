@@ -111,5 +111,6 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - - -
 
 ## 버전
-[1.0.0](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) 2018년 5월 12일<br/>
+Version [[(1.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160)] released<br/>
+- 2018년 5월 12일<br/>
 - - -
