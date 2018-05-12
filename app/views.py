@@ -229,6 +229,7 @@ def answer(request) :
 
 		except error as e:
 			meal = str(e)
+			return meal
 
 		# if today_weekday == 0 :
 		#
