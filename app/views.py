@@ -34,28 +34,22 @@ user4 = user_chk()
 
 def re_process(output) :
 
-    return JsonResponse (
-			{
-            'message':
-			{
+    return JsonResponse ({
+            'message': {
                 'text': output
             },
-            'keyboard':
-			{
+            'keyboard': {
                 'type': 'buttons',
                 'buttons' : ['학식', '내일의 학식', '개발자 정보']
             }
-        }
-	)
+        })
 
 def keyboard(request) :
 
-	return JsonResponse (
-		{
+	return JsonResponse ({
 		'type' : 'buttons',
 		'buttons' : ['학식', '내일의 학식', '개발자 정보']
-		}
-	)
+		})
 
 @csrf_exempt
 def answer(request) :
