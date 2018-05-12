@@ -228,8 +228,7 @@ def answer(request) :
 			meal = char_replace(meal)
 
 		except error as e:
-			meal = str(e)
-			return meal
+			pass
 
 		# if today_weekday == 0 :
 		#
