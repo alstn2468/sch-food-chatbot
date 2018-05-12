@@ -27,7 +27,7 @@ stop_message = '''[*] 연속 동일 요청입니다.
 # 문자열에 문자를 바꾸는 함수
 def char_replace(meal) :
 	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(':'): '\n',ord(' '): ''})
-	meal = meal.replace('\n', '\n· ')
+	meal = meal.replace('\n', '\n·')
 	meal = meal.replace('한정메뉴', '\n한정메뉴')
 	return meal
 
