@@ -9,9 +9,9 @@ SCH Food Chatbot
 [![Generic badge](https://img.shields.io/badge/Developing-Progressing-green.svg)](https://shields.io/)
 
 
-### 제작자 : [김민수](https://github.com/alstn2468)
-### Soonchunhyang University
-### Department of Computer Software Engineering
+## 제작자 : [김민수](https://github.com/alstn2468)
+## Soonchunhyang University
+## Department of Computer Software Engineering
 
 
 [ [Facebook](https://www.facebook.com/profile.php?id=100003769223078) ]
@@ -21,14 +21,14 @@ SCH Food Chatbot
 - - -
 
 
-### 개요
+## 개요
 Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 카카오톡 챗봇입니다.<br/>
 [(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)에서 친구 추가가 가능합니다.<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
-
-
-### 기술
 - - -
+
+
+## 기술
 
 
 ### 언어
@@ -59,10 +59,10 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 
 ### 서버
 - heroku
-
-
-### 기능
 - - -
+
+
+## 기능
 개발 진행 중<br/>
 
 
@@ -96,3 +96,4 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 월 ~ 금 요일별 `당일` 학식 메뉴 확인 가능<br/>
 - 중식 메뉴 확인 가능<br/>
 - 한정 메뉴 확인 가능<br/>
+- - -
