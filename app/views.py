@@ -128,6 +128,22 @@ def answer(request) :
 		# if user0.check(user_key) :
 		# 	return re_process(stop_message)
 
+		# if today_weekday == 0 :
+		#
+		# elif today_weekday == 1 :
+		#
+		# elif today_weekday == 2 :
+		#
+		# elif today_weekday == 3 :
+		#
+		# elif today_weekday == 4 :
+		#
+		# elif today_weekday == 5 :
+		#
+		# elif today_weekday == 6 :
+		#
+		# else :
+
 		send_message = select_button.format(content_name, today_info)
 
 		return re_process(send_message)
@@ -135,6 +151,20 @@ def answer(request) :
 	elif content_name == '향설2 생활관' :
 		# if user1.check(user_key) :
 		# 	return re_process(stop_message)
+
+		# if today_weekday == 0 :
+		#
+		# elif today_weekday == 1 :
+		#
+		# elif today_weekday == 2 :
+		#
+		# elif today_weekday == 3 :
+		#
+		# elif today_weekday == 4 :
+		#
+		# elif today_weekday == 5 :
+		#
+		# else :
 
 		send_message = select_button.format(content_name, today_info)
 
@@ -144,6 +174,20 @@ def answer(request) :
 		# if user2.check(user_key) :
 		# 	return re_process(stop_message)
 
+		# if today_weekday == 0 :
+		#
+		# elif today_weekday == 1 :
+		#
+		# elif today_weekday == 2 :
+		#
+		# elif today_weekday == 3 :
+		#
+		# elif today_weekday == 4 :
+		#
+		# elif today_weekday == 5 :
+		#
+		# else :
+
 		send_message = select_button.format(content_name, today_info)
 
 		return re_process(send_message)
@@ -151,6 +195,20 @@ def answer(request) :
 	elif content_name == '학생회관' :
 		# if user3.check(user_key) :
 		# 	return re_process(stop_message)
+
+		# if today_weekday == 0 :
+		#
+		# elif today_weekday == 1 :
+		#
+		# elif today_weekday == 2 :
+		#
+		# elif today_weekday == 3 :
+		#
+		# elif today_weekday == 4 :
+		#
+		# elif today_weekday == 5 :
+		#
+		# else :
 
 		send_message = select_button.format(content_name, today_info)
 
@@ -165,6 +223,22 @@ def answer(request) :
 
 		meal = str(datas.get('월'))
 		meal = char_replace(meal)
+
+		# if today_weekday == 0 :
+		#
+		# elif today_weekday == 1 :
+		#
+		# elif today_weekday == 2 :
+		#
+		# elif today_weekday == 3 :
+		#
+		# elif today_weekday == 4 :
+		#
+		# elif today_weekday == 5 :
+		#
+		# elif today_weekday == 6 :
+		#
+		# else :
 
 		send_message = select_button.format(content_name, today_info) + meal
 
