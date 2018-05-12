@@ -228,7 +228,7 @@ def answer(request) :
 			meal = char_replace(meal)
 
 		except Exception as e:
-
+			pass
 		# if today_weekday == 0 :
 		#
 		# elif today_weekday == 1 :
@@ -245,9 +245,9 @@ def answer(request) :
 		#
 		# else :
 
-		#send_message = select_button.format(content_name, today_info) + meal
+		send_message = select_button.format(content_name, today_info)
 
-		return re_process(meal)
+		return re_process(send_message)
 
 	elif content_name == '종강' :
 		# if user5.check(user_key) :
