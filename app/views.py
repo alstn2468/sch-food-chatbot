@@ -33,6 +33,7 @@ select_button = '[*] 선택한 버튼 : {0}\n[*] {1}의\n[*] {0} 메뉴입니다
 
 # 데이터를 보기 좋게 출력하기 위한 문자열 처리 함수
 def char_replace(meal) :
+
 	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(':'): '\n',ord(' '): ''})
 	meal = meal.replace('\n', '\n·')
 	meal = meal.replace('-중식/석식-', '\n[중식/석식]')
@@ -52,6 +53,7 @@ def char_replace(meal) :
 	meal = meal.replace('-한정메뉴-', '\n[한정메뉴]')
 	meal = meal.replace('-샐러드바-', '\n[샐러드바]')
 	meal = meal.replace('\n·\n', '\n\n')
+
 	return meal
 
 
@@ -218,11 +220,15 @@ def answer(request) :
 		# if user4.check(user_key) :
 		# 	return re_process(stop_message)
 
-		with open('menu/FacultyRestaurant.json', 'rb') as f :
-			datas = json.load(f)
+		try :
+			with open('menu/FacultyRestaurant.json', 'rb') as f :
+				datas = json.load(f)
 
-		meal = str(datas.get('월'))
-		meal = char_replace(meal)
+			meal = str(datas.get('월'))
+			meal = char_replace(meal)
+
+		except error as e:
+			meal = str(e)
 
 		# if today_weekday == 0 :
 		#
