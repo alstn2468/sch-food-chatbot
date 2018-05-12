@@ -12,6 +12,7 @@ import json
 # menu/StudentUnion.json      학생 회관
 # menu/FacultyRestaurant.json 교직원 식당
 
+# 개발자 정보 문자열
 dev_info = '''[*] 컴퓨터소프트웨어공학과
 [*] 17학번 김민수
 [*] Github : alstn2468
@@ -19,13 +20,16 @@ dev_info = '''[*] 컴퓨터소프트웨어공학과
 [*] 새로운 기능 문의 환영
 [*] 에러 발견 문의 환영'''
 
+# 연속 동일 요청 문자열
 stop_message = '''[*] 연속 동일 요청입니다.
 [*] 나중에 다시 시도해주세요.'''
 
+# 문자열에 문자를 바꾸는 함수
 def char_replace(meal) :
 	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(' '): '', ord(':'): ' : '})
 	return meal
 
+# 사용자의 과도한 접근을 차단하기 위한 클래스
 class user_chk() :
 
     def __init__(self) :
@@ -44,6 +48,7 @@ class user_chk() :
 
         return passcode
 
+# 조건별 다르게 사용
 user0 = user_chk()
 user1 = user_chk()
 user2 = user_chk()
@@ -53,6 +58,7 @@ user5 = user_chk()
 user6 = user_chk()
 user7 = user_chk()
 
+# 결과를 출력하고 다시 입력을 받기 위한 함수
 def re_process(output) :
 
     return JsonResponse (
