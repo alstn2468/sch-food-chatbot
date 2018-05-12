@@ -227,8 +227,7 @@ def answer(request) :
 			meal = str(datas.get('월'))
 			meal = char_replace(meal)
 
-		except error as e:
-			pass
+		except Exception as e:
 
 		# if today_weekday == 0 :
 		#
