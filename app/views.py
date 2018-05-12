@@ -129,7 +129,7 @@ def answer(request) :
 		finish_info = finish.strftime('%Y년 %m월 %d일')
 		date_dif = finish - today
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] 오늘 날짜 : ' + today_info + '\n[*] 종강 날짜 : ' + finish_info + '\n[*] 종강까지 남은 일 수 : %d일 남았습니다.' % date_dif.days
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] 오늘 : ' + today_info + '\n[*] 종강 : ' + finish_info + '\n[*] 남은 일 수 : %d일 남았습니다.' % date_dif.days
 
 		return re_process(send_message)
 
