@@ -28,8 +28,9 @@ stop_message = '''[*] 연속 동일 요청입니다.
 no_meal_message = '''[*] 학식이 없는 날 입니다.
 [*] 나중에 다시 시도해주세요.'''
 
-# 데이터를 보기 좋게 출력하기 위한 함수
+# 데이터를 보기 좋게 출력하기 위한 문자열 처리 함수
 def char_replace(meal) :
+	
 	meal = meal.translate({ ord('['): '', ord(']'): '', ord('{'): '', ord('}'): '', ord("'"): '', ord(','): '\n', ord(':'): '\n',ord(' '): ''})
 	meal = meal.replace('\n', '\n·')
 	meal = meal.replace('한정메뉴', '\n한정메뉴')
