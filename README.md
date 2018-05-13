@@ -116,7 +116,7 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - Version [(1.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) released<br/>
 
 2018/05/14<br/>
-- Version [(1.1.0)]() Update<br/>
+- Version [(1.1.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/0345f08a672d499816ca8cf03f60ab140992656c) Update<br/>
 - 학사 일정 확인 기능 추가
 
 
