@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from pytz import timezone
+from bs4 import BeautifulSoup
+import requests, os, re
 import datetime
 import json
 
@@ -80,6 +82,7 @@ user4 = user_chk()
 user5 = user_chk()
 user6 = user_chk()
 user7 = user_chk()
+user8 = user_chk()
 
 # 결과를 출력하고 다시 입력을 받기 위한 함수
 def re_process(output) :
@@ -93,7 +96,7 @@ def re_process(output) :
             'keyboard':
 			{
                 'type': 'buttons',
-                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '개발자 정보']
+                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
             }
         }
 	)
@@ -103,7 +106,7 @@ def keyboard(request) :
 	return JsonResponse (
 		{
 		'type' : 'buttons',
-		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '개발자 정보']
+		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정' '개발자 정보']
 		}
 	)
 
@@ -313,8 +316,58 @@ def answer(request) :
 
 		return re_process(send_message)
 
-	elif content_name == '개발자 정보' :
+	elif content_name == '학사 일정' :
 		if user6.check(user_key) :
+			return re_process(stop_message)
+
+		# Location of parser.py
+		BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+		# HTTP GET Request
+		request =  requests.get('https://homepage.sch.ac.kr/sch/05/05010000.jsp')
+
+		# GET HTML Source
+		html = request.text
+
+		# Use BeautifulSoup, From HTML Source to Python Object
+		# First Parameter is HTML Source, Second Parameter is the parser to be used
+		soup = BeautifulSoup(html, 'html.parser')
+
+		# HTML element using CSS Selector
+		schedules = soup.find_all('a', {'class' : 'schedule'})
+
+		schedule_day = []
+		schedule_list = []
+
+		for schedule in schedules:
+		    # 날짜 가져오기
+		    schedule_day.append(schedule.text)
+		    # 세부 내용 가져오기
+		    schedule_list.append(schedule.get('title'))
+
+		idx = 0
+
+		today_info = today.strftime('%Y년 %m월')
+
+		for schedule in schedule_day :
+			schedule_message = '\n[*] ' + str(schedule) + '일 일정\n' + '[*]' + schedule_list[idx]
+			idx += 1
+
+		# GET HTTP Header
+		header = request.headers
+
+		# GET HTTP Status ( 200 : normal )
+		status = request.status_code
+
+		# Check HTTP ( TRUE / FALSE )
+		is_HTTP_OK = request.ok
+
+		send_message = '[*] 선택한 버튼 : ' + content_name + '[*] ' + today_info + '의 학사일정\n' + schedule_message
+
+		return re_process(send_message)
+
+	elif content_name == '개발자 정보' :
+		if user7.check(user_key) :
 			return re_process(stop_message)
 
 		send_message = '[*] 선택한 버튼 : ' + content_name + '\n' + dev_info
@@ -322,7 +375,7 @@ def answer(request) :
 		return re_process(send_message)
 
 	else :
-		if user7.check(user_key) :
+		if user8.check(user_key) :
 			return re_process(stop_message)
 
 		error_message = '[*] 심각한 오류입니다.\n[*] 개발자에게 알려주세요'
