@@ -324,7 +324,7 @@ def answer(request) :
 
 			return re_process(send_message)
 
-		elif content_name == '처음으로'
+		elif content_name == '처음으로' :
 			return re_process('')
 
 
