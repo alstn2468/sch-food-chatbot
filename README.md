@@ -121,7 +121,7 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 
 2018/05/14<br/>
 - Version [(2.1.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/0345f08a672d499816ca8cf03f60ab140992656c) Update<br/>
-- 버튼 메뉴 세분화
+- 버튼 메뉴 세분화 진행중
 
 
 ## 친구 추가
