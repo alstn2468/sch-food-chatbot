@@ -112,3 +112,12 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 2018/05/12<br/>
 - Version [(1.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) released<br/>
 - - -
+
+## 친구 추가
+
+![first_step](images/1.jpg)
+![second_step](images/2.jpg)
+![third_step](images/3.jpg)
+![fourth_step](images/4.jpg)
+![fifth_step](images/5.jpg)
+![sixth_step](images/6.png)
