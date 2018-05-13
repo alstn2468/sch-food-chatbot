@@ -318,7 +318,7 @@ def answer(request) :
 		# Check HTTP ( TRUE / FALSE )
 		is_HTTP_OK = request.ok
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + result_message
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + '\n' + result_message
 
 		return re_process(send_message)
 
