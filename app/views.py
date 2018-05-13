@@ -352,7 +352,7 @@ def answer(request) :
 		result_message = '의 학사일정'
 
 		for schedule in schedule_day :
-			schedule_message = '\n[*] ' + str(schedule) + '일 일정\n' + '[*] ' + schedule_list[idx]
+			schedule_message = '\n[*] ' + str(schedule) + '일 일정\n' + '·' + schedule_list[idx]
 			result_message = str(result_message) + schedule_message
 			idx += 1
 
