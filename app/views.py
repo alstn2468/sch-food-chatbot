@@ -63,7 +63,7 @@ def re_process(output) :
             'keyboard':
 			{
                 'type': 'buttons',
-                'buttons' : ['학식', '종강', '학사 일정', '개발자 정보']
+                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
             }
         }
 	)
@@ -90,7 +90,7 @@ def keyboard(request) :
 	return JsonResponse (
 		{
 		'type' : 'buttons',
-		'buttons' : ['학식', '종강', '학사 일정', '처음으로', '개발자 정보']
+		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
 		}
 	)
 
