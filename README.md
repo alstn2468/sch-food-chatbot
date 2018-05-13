@@ -51,7 +51,9 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - urllib3(1.22)<br/>
 - virtualenv(15.2.0)<br/>
 - whitenoise(3.3.1)<br/>
-
+- beautifulsoup4(4.6.0)<br/>
+- bs4(0.0.1)<br/>
+- html-sanitizer(1.4.0)
 
 ### 서버
 - heroku
@@ -98,6 +100,10 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 종강일은 사람마다 `다를 수` 있습니다.<br/>
 - 순천향대학교 학식 알리미에서는 시험이 끝나고 `다음 주`를 기준으로 합니다.<br/>
 
+### 학사일정 확인 가능
+- `이번 달` 학사 일정 확인 가능<br/>
+- 학사 일정 요일, 세부 내용 확인 가능<br/>
+
 
 ### 개발자 정보 확인
 - 개발자의 정보 확인 가능<br/>
@@ -108,6 +114,10 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 ## 버전
 2018/05/12<br/>
 - Version [(1.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) released<br/>
+
+2018/05/14<br/>
+- Version [(1.1.0)]() Update<br/>
+- 학사 일정 확인 기능 추가
 
 
 ## 친구 추가
