@@ -113,7 +113,7 @@ def food_sel_process() :
 			},
 			'keyboard' :
 			{
-				'type' : 'buttons'
+				'type' : 'buttons',
 				'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '처음으로']
 			}
 		}
