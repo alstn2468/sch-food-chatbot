@@ -51,6 +51,7 @@ def char_replace(meal) :
 	meal = meal.replace('-한정메뉴-', '\n[한정메뉴]')
 	meal = meal.replace('-샐러드바-', '\n[샐러드바]')
 	meal = meal.replace('\n·\n', '\n\n')
+	meal = meal.replace('·', '· ')
 
 	return meal
 
@@ -96,9 +97,26 @@ def re_process(output) :
             'keyboard':
 			{
                 'type': 'buttons',
-                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
+                'buttons' : ['학식', '종강', '학사 일정', '개발자 정보']
             }
         }
+	)
+
+# 학식 버튼을 눌렀을 때 세부 버튼을 받기 위한 함수
+def food_sel_process() :
+
+	return JsonResponse (
+		{
+			'message' :
+			{
+				'text' : '어느 곳의 메뉴가 궁금하신가요?'
+			}
+			'keyboard' :
+			{
+				'type' : 'buttons'
+				'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '처음으로']
+			}
+		}
 	)
 
 def keyboard(request) :
@@ -106,7 +124,7 @@ def keyboard(request) :
 	return JsonResponse (
 		{
 		'type' : 'buttons',
-		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
+		'buttons' : ['학식', '종강', '학사 일정', '처음으로', '개발자 정보']
 		}
 	)
 
@@ -124,184 +142,191 @@ def answer(request) :
 	today_info = today.strftime('%Y년 %m월 %d일')
 	today_weekday = today.weekday()
 
-	if content_name == '향설1 생활관' :
-		if user0.check(user_key) :
-			return re_process(stop_message)
+	if content_name == '학식' :
+		return food_sel_process()
 
-		try :
-			with open('app/menu/SnowFlowerOne.json', 'rb') as f :
-				datas = json.load(f)
+		if content_name == '향설1 생활관' :
+			if user0.check(user_key) :
+				return re_process(stop_message)
 
-			if today_weekday == 0 :
-				meal = str(datas.get('월'))
-				meal = char_replace(meal)
+			try :
+				with open('app/menu/SnowFlowerOne.json', 'rb') as f :
+					datas = json.load(f)
 
-			elif today_weekday == 1 :
-				meal = str(datas.get('화'))
-				meal = char_replace(meal)
+				if today_weekday == 0 :
+					meal = str(datas.get('월'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 2 :
-				meal = str(datas.get('수'))
-				meal = char_replace(meal)
+				elif today_weekday == 1 :
+					meal = str(datas.get('화'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 3 :
-				meal = str(datas.get('목'))
-				meal = char_replace(meal)
+				elif today_weekday == 2 :
+					meal = str(datas.get('수'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 4 :
-				meal = str(datas.get('금'))
-				meal = char_replace(meal)
+				elif today_weekday == 3 :
+					meal = str(datas.get('목'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 5 :
-				meal = str(datas.get('토'))
-				meal = char_replace(meal)
+				elif today_weekday == 4 :
+					meal = str(datas.get('금'))
+					meal = char_replace(meal)
 
-			else :
-				meal = '\n일요일에 ' + content_name + ' 식당은\n운영하지 않습니다.'
+				elif today_weekday == 5 :
+					meal = str(datas.get('토'))
+					meal = char_replace(meal)
 
-		except Exception as e:
-			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
+				else :
+					meal = '\n일요일에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
-		send_message = select_button.format(content_name, today_info) + meal
+			except Exception as e:
+				meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
-		return re_process(send_message)
+			send_message = select_button.format(content_name, today_info) + meal
 
-	elif content_name == '향설2 생활관' :
-		if user1.check(user_key) :
-			return re_process(stop_message)
+			return re_process(send_message)
 
-		try :
-			with open('app/menu/SnowFlowerTwo.json', 'rb') as f :
-				datas = json.load(f)
+		elif content_name == '향설2 생활관' :
+			if user1.check(user_key) :
+				return re_process(stop_message)
 
-			if today_weekday >= 0 or today_weekday <= 4  :
-				meal = str(datas.get('향2'))
-				meal = char_replace(meal)
+			try :
+				with open('app/menu/SnowFlowerTwo.json', 'rb') as f :
+					datas = json.load(f)
 
-			else :
-				meal = '\n주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
+				if today_weekday >= 0 or today_weekday <= 4  :
+					meal = str(datas.get('향2'))
+					meal = char_replace(meal)
 
-		except Exception as e:
-			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
+				else :
+					meal = '\n주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
-		send_message = select_button.format(content_name, today_info) + meal
+			except Exception as e:
+				meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
-		return re_process(send_message)
+			send_message = select_button.format(content_name, today_info) + meal
 
-	elif content_name == '향설3 생활관' :
-		if user2.check(user_key) :
-			return re_process(stop_message)
+			return re_process(send_message)
 
-		try :
-			with open('app/menu/SnowFlowerThree.json', 'rb') as f :
-				datas = json.load(f)
+		elif content_name == '향설3 생활관' :
+			if user2.check(user_key) :
+				return re_process(stop_message)
 
-			if today_weekday == 0 :
-				meal = str(datas.get('월'))
-				meal = char_replace(meal)
+			try :
+				with open('app/menu/SnowFlowerThree.json', 'rb') as f :
+					datas = json.load(f)
 
-			elif today_weekday == 1 :
-				meal = str(datas.get('화'))
-				meal = char_replace(meal)
+				if today_weekday == 0 :
+					meal = str(datas.get('월'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 2 :
-				meal = str(datas.get('수'))
-				meal = char_replace(meal)
+				elif today_weekday == 1 :
+					meal = str(datas.get('화'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 3 :
-				meal = str(datas.get('목'))
-				meal = char_replace(meal)
+				elif today_weekday == 2 :
+					meal = str(datas.get('수'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 4 :
-				meal = str(datas.get('금'))
-				meal = char_replace(meal)
+				elif today_weekday == 3 :
+					meal = str(datas.get('목'))
+					meal = char_replace(meal)
 
-			else :
-				meal = str(datas.get('주말'))
-				meal = char_replace(meal)
+				elif today_weekday == 4 :
+					meal = str(datas.get('금'))
+					meal = char_replace(meal)
 
-		except Exception as e:
-			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
+				else :
+					meal = str(datas.get('주말'))
+					meal = char_replace(meal)
 
-		send_message = select_button.format(content_name, today_info) + meal
+			except Exception as e:
+				meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
-		return re_process(send_message)
+			send_message = select_button.format(content_name, today_info) + meal
 
-	elif content_name == '학생회관' :
-		if user3.check(user_key) :
-			return re_process(stop_message)
+			return re_process(send_message)
 
-		try :
-			with open('app/menu/StudentUnion.json', 'rb') as f :
-				datas = json.load(f)
+		elif content_name == '학생회관' :
+			if user3.check(user_key) :
+				return re_process(stop_message)
 
-			if today_weekday == 0 :
-				meal = str(datas.get('월'))
-				meal = char_replace(meal)
+			try :
+				with open('app/menu/StudentUnion.json', 'rb') as f :
+					datas = json.load(f)
 
-			elif today_weekday == 1 :
-				meal = str(datas.get('화'))
-				meal = char_replace(meal)
+				if today_weekday == 0 :
+					meal = str(datas.get('월'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 2 :
-				meal = str(datas.get('수'))
-				meal = char_replace(meal)
+				elif today_weekday == 1 :
+					meal = str(datas.get('화'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 3 :
-				meal = str(datas.get('목'))
-				meal = char_replace(meal)
+				elif today_weekday == 2 :
+					meal = str(datas.get('수'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 4 :
-				meal = str(datas.get('금'))
-				meal = char_replace(meal)
+				elif today_weekday == 3 :
+					meal = str(datas.get('목'))
+					meal = char_replace(meal)
 
-			else :
-				meal = '\n주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
+				elif today_weekday == 4 :
+					meal = str(datas.get('금'))
+					meal = char_replace(meal)
 
-		except Exception as e:
-			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
+				else :
+					meal = '\n주말에 ' + content_name + ' 식당은\n운영하지 않습니다.'
 
-		send_message = select_button.format(content_name, today_info) + meal
+			except Exception as e:
+				meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
-		return re_process(send_message)
+			send_message = select_button.format(content_name, today_info) + meal
 
-	elif content_name == '교직원 식당' :
-		if user4.check(user_key) :
-			return re_process(stop_message)
+			return re_process(send_message)
 
-		try :
-			with open('app/menu/FacultyRestaurant.json', 'rb') as f :
-				datas = json.load(f)
+		elif content_name == '교직원 식당' :
+			if user4.check(user_key) :
+				return re_process(stop_message)
 
-			if today_weekday == 0 :
-				meal = str(datas.get('월'))
-				meal = char_replace(meal)
+			try :
+				with open('app/menu/FacultyRestaurant.json', 'rb') as f :
+					datas = json.load(f)
 
-			elif today_weekday == 1 :
-				meal = str(datas.get('화'))
-				meal = char_replace(meal)
+				if today_weekday == 0 :
+					meal = str(datas.get('월'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 2 :
-				meal = str(datas.get('수'))
-				meal = char_replace(meal)
+				elif today_weekday == 1 :
+					meal = str(datas.get('화'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 3 :
-				meal = str(datas.get('목'))
-				meal = char_replace(meal)
+				elif today_weekday == 2 :
+					meal = str(datas.get('수'))
+					meal = char_replace(meal)
 
-			elif today_weekday == 4 :
-				meal = str(datas.get('금'))
-				meal = char_replace(meal)
+				elif today_weekday == 3 :
+					meal = str(datas.get('목'))
+					meal = char_replace(meal)
 
-			else :
-				meal = '\n주말에 '+ content_name + '은\n운영하지 않습니다.'
+				elif today_weekday == 4 :
+					meal = str(datas.get('금'))
+					meal = char_replace(meal)
 
-		except Exception as e:
-			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
+				else :
+					meal = '\n주말에 '+ content_name + '은\n운영하지 않습니다.'
 
-		send_message = select_button.format(content_name, today_info) + meal
+			except Exception as e:
+				meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
-		return re_process(send_message)
+			send_message = select_button.format(content_name, today_info) + meal
+
+			return re_process(send_message)
+
+		elif content_name == '처음으로'
+			return re_process('')
+
 
 	elif content_name == '종강' :
 		if user5.check(user_key) :
@@ -352,7 +377,7 @@ def answer(request) :
 		result_message = '의 학사일정'
 
 		for schedule in schedule_day :
-			schedule_message = '\n[*] ' + str(schedule) + '일 일정\n' + '·' + schedule_list[idx]
+			schedule_message = '\n[' + str(schedule) + '일 일정]\n' + '· ' + schedule_list[idx]
 			result_message = str(result_message) + schedule_message
 			idx += 1
 
