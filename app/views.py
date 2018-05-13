@@ -68,23 +68,6 @@ def re_process(output) :
         }
 	)
 
-# 학식 버튼을 눌렀을 때 세부 버튼을 받기 위한 함수
-def food_sel_process() :
-
-	return JsonResponse (
-		{
-			'message' :
-			{
-				'text' : '어느 곳의 메뉴가 궁금하신가요?'
-			},
-			'keyboard' :
-			{
-				'type' : 'buttons',
-				'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '처음으로']
-			}
-		}
-	)
-
 def keyboard(request) :
 
 	return JsonResponse (
