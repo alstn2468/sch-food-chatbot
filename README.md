@@ -119,9 +119,6 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 	<img src = 'images/1.jpg' width = '300px' height = '300px'/>
 	<img src = 'images/2.jpg' width = '300px' height = '300px'/>
 	<img src = 'images/3.jpg' width = '300px' height = '300px'/>
-<div/>
-
-<div style = "clear:both">
 	<img src = 'images/4.jpg' width = '300px' height = '300px'/>
 	<img src = 'images/5.jpg' width = '300px' height = '300px'/>
 	<img src = 'images/6.png' width = '300px' height = '300px'/>
