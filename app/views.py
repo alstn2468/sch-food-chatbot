@@ -63,9 +63,26 @@ def re_process(output) :
             'keyboard':
 			{
                 'type': 'buttons',
-                'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
+                'buttons' : ['학식', '종강', '학사 일정', '개발자 정보']
             }
         }
+	)
+
+# 학식 버튼을 눌렀을 때 세부 버튼을 받기 위한 함수
+def food_sel_process() :
+
+	return JsonResponse (
+		{
+			'message' :
+			{
+				'text' : '어느 곳의 메뉴가 궁금하신가요?'
+			},
+			'keyboard' :
+			{
+				'type' : 'buttons',
+				'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '처음으로']
+			}
+		}
 	)
 
 def keyboard(request) :
@@ -73,7 +90,7 @@ def keyboard(request) :
 	return JsonResponse (
 		{
 		'type' : 'buttons',
-		'buttons' : ['향설1 생활관', '향설2 생활관', '향설3 생활관', '학생회관', '교직원 식당', '종강', '학사 일정', '개발자 정보']
+		'buttons' : ['학식', '종강', '학사 일정', '처음으로', '개발자 정보']
 		}
 	)
 
@@ -91,7 +108,10 @@ def answer(request) :
 	today_info = today.strftime('%Y년 %m월 %d일')
 	today_weekday = today.weekday()
 
-	if content_name == '향설1 생활관' :
+	if content_name == '학식' :
+		return food_sel_process()
+
+	elif content_name == '향설1 생활관' :
 
 		try :
 			with open('app/menu/SnowFlowerOne.json', 'rb') as f :
@@ -260,6 +280,10 @@ def answer(request) :
 
 		return re_process(send_message)
 
+	elif content_name == '처음으로' :
+		return re_process(content_name)
+
+
 	elif content_name == '종강' :
 
 		# 종강 일
@@ -302,7 +326,7 @@ def answer(request) :
 
 		today_info = today.strftime('%Y년 %m월')
 
-		result_message = '의 학사일정\n'
+		result_message = '의 학사일정'
 
 		for schedule in schedule_day :
 			schedule_message = '\n[' + str(schedule) + '일 일정]\n' + '· ' + schedule_list[idx]
