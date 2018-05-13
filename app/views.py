@@ -349,8 +349,11 @@ def answer(request) :
 
 		today_info = today.strftime('%Y년 %m월')
 
+		result_message = '의 학사일정\n'
+
 		for schedule in schedule_day :
-			schedule_message = '\n[*] ' + str(schedule) + '일 일정\n' + '[*]' + schedule_list[idx]
+			schedule_message = '\n[*] ' + str(schedule) + '일 일정\n' + '[*] ' + schedule_list[idx]
+			result_message = str(result_message) + schedule_message
 			idx += 1
 
 		# GET HTTP Header
@@ -362,7 +365,7 @@ def answer(request) :
 		# Check HTTP ( TRUE / FALSE )
 		is_HTTP_OK = request.ok
 
-		send_message = '[*] 선택한 버튼 : ' + content_name + '[*] ' + today_info + '의 학사일정\n' + schedule_message
+		send_message = '[*] 선택한 버튼 : ' + content_name + '\n[*] ' + today_info + result_message
 
 		return re_process(send_message)
 
