@@ -16,14 +16,12 @@ SCH Food Chatbot
 [ [Github](https://github.com/alstn2468) ]
 [ [LinkedIn](https://www.linkedin.com/in/minsu-kim-336289160/) ]
 [[Webpage](https://kimminsu.ml) ]<br/>
-- - -
 
 
 ## 개요
 Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 카카오톡 챗봇입니다.<br/>
 [(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)에서 친구 추가가 가능합니다.<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
-- - -
 
 
 ## 기술
@@ -57,7 +55,6 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 
 ### 서버
 - heroku
-- - -
 
 
 ## 기능
@@ -106,12 +103,12 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 개발자의 정보 확인 가능<br/>
 - 문제가 생길시 연락할 수 있는 카카오톡 아이디 명시<br/>
 - 학과, 학번, 이름 확인 가능<br/>
-- - -
+
 
 ## 버전
 2018/05/12<br/>
 - Version [(1.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) released<br/>
-- - -
+
 
 ## 친구 추가
 
