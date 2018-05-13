@@ -270,12 +270,12 @@ def answer(request) :
 			else :
 				meal = '\n주말에 '+ content_name + '은\n운영하지 않습니다.'
 
-	except Exception as e:
-		meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
+		except Exception as e:
+			meal = str(e) + '\n에러메세지가 보이면 관리자에게 알려주세요.'
 
-	send_message = select_button.format(content_name, today_info) + meal
+		send_message = select_button.format(content_name, today_info) + meal
 
-	return re_process(send_message)
+		return re_process(send_message)
 
 	elif content_name == '종강' :
 
