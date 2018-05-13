@@ -145,6 +145,8 @@ def answer(request) :
 	if content_name == '학식' :
 		return food_sel_process()
 
+		content_name = received_json['content']
+
 		if content_name == '향설1 생활관' :
 			if user0.check(user_key) :
 				return re_process(stop_message)
