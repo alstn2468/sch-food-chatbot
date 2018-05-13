@@ -283,6 +283,7 @@ def answer(request) :
 			return re_process(send_message)
 
 		elif content_name == '처음으로' :
+			
 			return re_process('')
 
 
@@ -298,7 +299,7 @@ def answer(request) :
 		return re_process(send_message)
 
 	elif content_name == '학사 일정' :
-		
+
 		# Location of parser.py
 		BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
