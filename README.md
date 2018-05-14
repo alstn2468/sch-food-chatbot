@@ -6,7 +6,7 @@ SCH Food Chatbot
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Generic badge](https://img.shields.io/badge/Version-2.2.0-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Version-2.2.1-green.svg)](https://shields.io/)
 
 
 ## 제작자 : [김민수](https://github.com/alstn2468)<br/>Soonchunhyang University<br/>Department of Computer Software Engineering
@@ -124,7 +124,7 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 버튼 메뉴 세분화 완료
 
 2018/05/14<br/>
-- Version [(2.2.1)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/ce419d7c03e235c8cc61a78d2b26d75e1f364079) New Function Updated / Source Code Modularization<br/>
+- Version [(2.2.1)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb) New Function Updated / Source Code Modularization<br/>
 - 학교 Wi-Fi 기능 추가 완료
 - 소스 코드 모듈화 완료
 
