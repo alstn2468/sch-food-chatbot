@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from app.my_module.button import *
 from app.my_module.repdic import *
 from app.my_module.scheduleparser import *
 from app.my_module.stringformat import *
+from app.my_module.process import *
+from app.my_module.button import *
 from pytz import timezone
 import requests, datetime, json
 
@@ -15,63 +16,12 @@ import requests, datetime, json
 # menu/StudentUnion.json      학생 회관
 # menu/FacultyRestaurant.json 교직원 식당
 
-# 개발자 정보 메세지
-dev_info = '''[*] 컴퓨터소프트웨어공학과
-[*] 17학번 김민수
-[*] Github : alstn2468
-[*] KakaoTalk : alstn2468
-[*] 새로운 기능 문의 환영
-[*] 에러 발견 문의 환영'''
-
-# 데이터를 보기 좋게 출력하기 위한 문자열 처리 함수
-def char_replace(meal) :
-
-	for key, value in trans_dic.items() :
-
-		meal = meal.replace(key, value)
-
-	return meal
-
-# 결과를 출력하고 다시 입력을 받기 위한 함수
-def re_process(output) :
-
-    return JsonResponse (
-		{
-            'message':
-			{
-                'text': output
-            },
-            'keyboard':
-			{
-                'type': 'buttons',
-                'buttons' : basic_button
-            }
-        }
-	)
-
-# 학식 버튼을 눌렀을 때 세부 버튼을 받기 위한 함수
-def food_sel_process() :
-
-	return JsonResponse (
-		{
-			'message' :
-			{
-				'text' : '어느 곳의 메뉴가 궁금하신가요?'
-			},
-			'keyboard' :
-			{
-				'type' : 'buttons',
-				'buttons' : food_sel_process_button
-			}
-		}
-	)
-
 def keyboard(request) :
 
 	return JsonResponse (
 		{
-		'type' : 'buttons',
-		'buttons' : basic_button
+			'type' : 'buttons',
+			'buttons' : basic_button
 		}
 	)
 
@@ -90,7 +40,18 @@ def answer(request) :
 	today_weekday = today.weekday()
 
 	if content_name == '학식' :
+
+		return food_info_process()
+
+	elif content_name == '메뉴' :
+
 		return food_sel_process()
+
+	elif content_name == '이용 시간' :
+
+		send_message = select_else_button.format(content_name) + using_time
+
+		return re_process(send_message)
 
 	elif content_name == '향설1 생활관' :
 
@@ -278,7 +239,6 @@ def answer(request) :
 			finish = datetime.datetime(2018, 6, 22)
 			finish_info = finish.strftime('%Y년 %m월 %d일')
 			date_dif = finish - today
-
 
 			send_message = select_else_button.format(content_name) + end_day.format(today_info, finish_info, date_dif.days)
 

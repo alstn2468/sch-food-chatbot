@@ -124,10 +124,14 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 버튼 메뉴 세분화 완료
 
 2018/05/14<br/>
-- Version [(2.2.1)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb) New Function Updated / Source Code Modularization<br/>
+- Version [(2.2.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb) New Function Updated / Source Code Modularization<br/>
 - 학교 Wi-Fi 기능 추가 완료
 - 소스 코드 모듈화 완료
 
+2018/05/16<br/>
+- Version [(2.3.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb) New Function Updated / Source Code Modularization<br/>
+- 식당 이용 시간 확인 기능 추가 완료
+- 소스 코드 모듈화 완료
 
 ## 친구 추가
 

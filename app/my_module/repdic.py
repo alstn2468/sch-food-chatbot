@@ -29,3 +29,12 @@ trans_dic = {
 '\n·\n' : '\n\n',
 '·' : '· '
 }
+
+# 데이터를 보기 좋게 출력하기 위한 문자열 처리 함수
+def char_replace(meal) :
+
+	for key, value in trans_dic.items() :
+
+		meal = meal.replace(key, value)
+
+	return meal

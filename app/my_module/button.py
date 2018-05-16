@@ -8,6 +8,12 @@ basic_button = [
 '개발자 정보'
 ]
 
+food_info_button = [
+'메뉴',
+'이용 시간',
+'처음으로'
+]
+
 food_sel_process_button = [
 '향설1 생활관',
 '향설2 생활관',
