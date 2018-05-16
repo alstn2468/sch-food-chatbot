@@ -129,7 +129,7 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 소스 코드 모듈화 완료
 
 2018/05/16<br/>
-- Version [(2.3.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb) New Function Updated / Source Code Modularization<br/>
+- Version [(2.3.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a6428acc74a6561d29b65ae4e5cea82a41aee978) New Function Updated / Source Code Modularization<br/>
 - 식당 이용 시간 확인 기능 추가 완료
 - 소스 코드 모듈화 완료
 
