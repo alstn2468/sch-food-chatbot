@@ -120,20 +120,20 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - Version [(1.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a90e974c8cbcb5274cc9d3174393c5dadf446160) Released<br/>
 
 2018/05/14<br/>
-- Version [(2.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/0345f08a672d499816ca8cf03f60ab140992656c) New Function Updated<br/>
+- Version [(2.0.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/0345f08a672d499816ca8cf03f60ab140992656c)<br/>
 - 학사 일정 확인 기능 추가 완료
 
 2018/05/14<br/>
-- Version [(2.1.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/ce419d7c03e235c8cc61a78d2b26d75e1f364079) Food Menu Button Optimized<br/>
+- Version [(2.1.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/ce419d7c03e235c8cc61a78d2b26d75e1f364079)<br/>
 - 버튼 메뉴 세분화 완료
 
 2018/05/14<br/>
-- Version [(2.2.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb) New Function Updated / Source Code Modularization<br/>
+- Version [(2.2.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/22a2d0cd5613c5398dfb8c6656467389f1acbfbb)<br/>
 - 학교 Wi-Fi 기능 추가 완료
 - 소스 코드 모듈화 완료
 
 2018/05/16<br/>
-- Version [(2.3.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a6428acc74a6561d29b65ae4e5cea82a41aee978) New Function Updated / Source Code Modularization<br/>
+- Version [(2.3.0)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a6428acc74a6561d29b65ae4e5cea82a41aee978)<br/>
 - 식당 이용 시간 확인 기능 추가 완료
 - 소스 코드 모듈화 완료
 
