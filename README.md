@@ -137,6 +137,10 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 - 식당 이용 시간 확인 기능 추가 완료
 - 소스 코드 모듈화 완료
 
+2018/05/20<br/>
+- Version [(2.3.1)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a924f4cb603ecaa1378fb286e7c7ab1b95852a2b)<br/>
+- 학식 메뉴 띄어쓰기 적용
+
 ## 친구 추가
 
 <div style = "clear:both">
