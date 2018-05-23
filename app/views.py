@@ -33,7 +33,7 @@ def answer(request) :
 	content_name = received_json['content']
 	type_name = received_json['type']
 	user_key = received_json['user_key']
-
+	
 	# 오늘
 	today = datetime.datetime.now()
 	today_info = today.strftime('%Y년 %m월 %d일')
