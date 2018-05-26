@@ -6,7 +6,10 @@ SCH Food Chatbot
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Generic badge](https://img.shields.io/badge/Version-2.3.0-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/No-Update-red.svg)](https://shields.io/)
+
+### 이 프로젝트는 더 이상 업데이트 되지 않습니다.<br/>
+### 곧 다른 레파지토리가 업데이트 될 예정입니다.
 
 
 ## 제작자 : [김민수](https://github.com/alstn2468)<br/>Soonchunhyang University<br/>Department of Computer Software Engineering
@@ -23,8 +26,6 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 [(순천향대학교 학식알리미)](http://pf.kakao.com/_xggCxixl)에서 친구 추가가 가능합니다.<br/>
 순천향대학교 학식알리미는 다음 [문서](https://github.com/plusfriend/auto_reply)를 기반으로 제작되었습니다.<br/>
 
-이 프로젝트는 더 이상 업데이트 되지 않습니다.
-곧 다른 레파지토리가 업데이트 될 예정입니다.
 
 ## 기술
 
@@ -142,14 +143,3 @@ Python과 Django 웹 프레임워크를 사용하여 제작한 자동 응답형 
 2018/05/20<br/>
 - Version [(2.3.1)](https://github.com/alstn2468/SCH_Food_ChatBot/commit/a924f4cb603ecaa1378fb286e7c7ab1b95852a2b)<br/>
 - 학식 메뉴 띄어쓰기 적용
-
-## 친구 추가
-
-<div style = "clear:both">
-	<img src = 'images/1.jpg' width = '300px' height = '300px'/>
-	<img src = 'images/2.jpg' width = '300px' height = '300px'/>
-	<img src = 'images/3.jpg' width = '300px' height = '300px'/>
-	<img src = 'images/4.jpg' width = '300px' height = '300px'/>
-	<img src = 'images/5.jpg' width = '300px' height = '300px'/>
-	<img src = 'images/6.png' width = '300px' height = '300px'/>
-<div/>
